@@ -68,3 +68,7 @@ end
 gem "rspec-rails", "~> 6.0"
 
 gem "devise", "~> 4.9"
+
+gem 'devise-jwt'
+
+gem 'rack-cors'
