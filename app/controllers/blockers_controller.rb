@@ -1,0 +1,2 @@
+class BlockersController < ApplicationController
+end

@@ -10,9 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_02_072137) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_02_074845) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blockers", force: :cascade do |t|
+    t.text "category"
+    t.text "blocker_description"
+    t.text "image1"
+    t.text "image2"
+    t.text "image3"
+    t.boolean "resolved"
+    t.boolean "urgent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "solutions", force: :cascade do |t|
+    t.text "description"
+    t.text "image1"
+    t.text "image2"
+    t.text "image3"
+    t.boolean "require_followup"
+    t.boolean "attempted"
+    t.boolean "acceptable"
+    t.integer "user_id"
+    t.integer "blocker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
