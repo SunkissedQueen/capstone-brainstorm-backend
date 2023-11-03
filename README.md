@@ -1,24 +1,4 @@
-# README
+## References
+- [Join Table in Rails](https://medium.com/@mahdy.a.noureddine/step-by-step-guide-on-efficiently-making-a-join-table-in-rails-426fa6b9cce2)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- [Modify Devise](https://github.com/learn-academy-2023-foxtrot/syllabus/blob/main/capstone/modifying-devise.md)
