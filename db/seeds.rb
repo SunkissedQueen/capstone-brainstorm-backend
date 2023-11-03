@@ -4,7 +4,7 @@
 
 # users
 user1 = User.where(email: 'dilemma1@example.com').first_or_create(username: 'User1', password: 'password1', password_confirmation: 'password1')
-user2 = User.where(username: 'User2', email: 'dilemma2@example.com').first_or_create(password: 'password2', password_confirmation: 'password2')
+user2 = User.where(email: 'dilemma2@example.com').first_or_create(username: 'User2', password: 'password2', password_confirmation: 'password2')
 
 # blockers
 blocker1 = [
@@ -24,7 +24,7 @@ blocker2 = [
     urgent: true
   },{
     category: 'education',
-    blocker_description: 'I am not sure where to go to learn about coding',
+    blocker_description: 'I am not sure where to go to learn about coding. Do you have any suggestions?',
     resolved: false,
     urgent: true
   }
@@ -51,4 +51,21 @@ solution1 = Solution.create(
   blocker_id: 1
 )
 
-p "creating solution: #{solution1}"
+solution2 = Solution.create(
+  description: "It's your prerogative. Do what you want to do with your closet accesories!",
+  require_followup: false,
+  attempted: true,
+  acceptable: true,
+  user_id: user1.id,
+  blocker_id: 2
+)
+
+solution3 = Solution.create(
+  description: 'Everything that I continue to aspire to be is what I have acquired from LEARN Academy.',
+  require_followup: true,
+  attempted: false,
+  acceptable: true,
+  user_id: user1.id,
+  blocker_id: 3
+)
+p "creating solution: #{solution1}, #{solution2}, #{solution3}"
