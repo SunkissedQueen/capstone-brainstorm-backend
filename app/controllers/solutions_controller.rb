@@ -32,7 +32,7 @@ class SolutionsController < ApplicationController
       render json: solution.errors
     end
   end
-
+  
   private
   def solution_params
     params.require(:solution).permit(:description, :image1, :image2, :image3, :require_followup, :attempted, :acceptable, :user_id, :blocker_id)
