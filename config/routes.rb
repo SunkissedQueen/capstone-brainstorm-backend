@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :solutions
-  resources :blockers
+  resources :blockers do
+    resources :solutions
+  end
   devise_for :users,
   path: '',
   path_names: {
