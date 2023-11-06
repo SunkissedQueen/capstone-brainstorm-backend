@@ -26,9 +26,8 @@ class BlockersController < ApplicationController
   def destroy
     blocker = Blocker.find(params[:id])
     blockers = Blocker.all
-    blocker.update(blocker_params)
     if blocker.destroy
-      render json: blockers
+      render json: blockers, status: 204
     else
       render json: blocker.errors
     end
@@ -36,6 +35,6 @@ class BlockersController < ApplicationController
 
   private
   def blocker_params
-    params.require(:blocker).permit(:category, :blocker_description, :image1, :image2, image3, :resolved, :urgent)
+    params.require(:blocker).permit(:category, :blocker_description, :image1, :image2, :image3, :resolved, :urgent)
   end
 end
